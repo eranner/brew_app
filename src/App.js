@@ -6,13 +6,12 @@ import './App.css';
 
 function App() {
   const [order, setOrder] = useState('')
+  const [customerName, setCustomerName] = useState('')
   
   return (
     <>
-   <MainPage order={order} setOrder={setOrder}/>
-   <h3>{order !== '' ? `Current Order: ${order}` : ''}</h3>
+   <MainPage order={order} setOrder={setOrder} customerName={customerName} setCustomerName={setCustomerName}/>
 
-   {order !== '' && <StartOverButton order={order} setOrder={setOrder} />}
    </>
   );
 }

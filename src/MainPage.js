@@ -14,9 +14,9 @@ export default function MainPage(props) {
                 </div>
                 <div className="main-content">
                     <Routes>
-                        <Route exact path="/" element={<Coffee order={props.order} setOrder={props.setOrder} />} />
-                        <Route exact path="/food" element={<Food order={props.order} setOrder={props.setOrder} />} />
-                        <Route exact path="/games" element={<Games order={props.order} setOrder={props.setOrder} />} />
+                        <Route exact path="/" element={<Coffee order={props.order} setOrder={props.setOrder} allItems={props.allItems} />} />
+                        <Route exact path="/food" element={<Food order={props.order} setOrder={props.setOrder} allItems={props.allItems} />} />
+                        <Route exact path="/games" element={<Games order={props.order} setOrder={props.setOrder} allItems={props.allItems} />} />
                     </Routes>
                     <OrderForm order={props.order} setOrder={props.setOrder} customerName={props.customerName}/>
                 </div>

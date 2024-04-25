@@ -7,6 +7,7 @@ function App() {
   const [order, setOrder] = useState('')
   const [customerName, setCustomerName] = useState('')
   const [allItems, setAllItems] = useState({})
+  const [finalBill, setFinalBill] = useState(0)
 
   console.log(allItems)
 useEffect(()=> {
@@ -23,9 +24,14 @@ useEffect(()=> {
 getData();
 }, [])
 
+function updateTotal(bill){
+  const roundedBill = parseFloat(bill.toFixed(2));
+  setFinalBill(prevFinalBill => prevFinalBill + roundedBill);
+
+}
 return (
     <>
-   <MainPage order={order} setOrder={setOrder} customerName={customerName} setCustomerName={setCustomerName} allItems={allItems}/>
+   <MainPage order={order} setOrder={setOrder} customerName={customerName} setCustomerName={setCustomerName} allItems={allItems} finalBill={finalBill} setFinalBill={setFinalBill} updateTotal={updateTotal}/>
 
    </>
   );

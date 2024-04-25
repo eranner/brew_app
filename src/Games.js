@@ -15,8 +15,10 @@ export default function Games(props) {
                     alert('Only one game session can be ordered per hour.')
                     return
                 }
+
+                props.updateTotal(parseFloat(game.price))
                 props.setOrder(props.order + ' ' + game.game + ' $'+game.price + '/'+ game.minutes +'min | ')
-            }}>{game.game} {game.price === 0 ? 'free/' + game.minutes +' min' : '$'+game.price + '/'+ game.minutes +'min'}</Button>
+            }}>{game.game} {game.price === 0 ? 'free/' + game.minutes +'min' : '$'+game.price + '/'+ game.minutes +'min'}</Button>
         ))}
         </div>
         </div>

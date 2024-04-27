@@ -6,6 +6,17 @@ export default function StartOver(props){
 
     function toCheckout() {
         // Define the order data
+
+        if(props.customerName==''){
+            alert('You must enter a customer name to submit an order')
+            return
+        }
+
+
+        if(props.order==''){
+            alert('You haven\'t added any items to your order')
+            return
+        }
         const orderData = {
             order: props.order,
             customerName: props.customerName,
